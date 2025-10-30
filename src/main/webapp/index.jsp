@@ -6,7 +6,3 @@
 <t:pageTemplate pageTitle="About Parking Lot">
     <h1>About  Paking Lot </h1>
 </t:pageTemplate>
-
-
-
-

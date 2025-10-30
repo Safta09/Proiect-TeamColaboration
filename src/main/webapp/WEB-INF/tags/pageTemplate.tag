@@ -1,5 +1,6 @@
 <%@tag description="base page template" pageEncoding="UTF-8"%>
-<%@attribute name="pageTitle"%>
+<%@ attribute name="pageTitle" required="true" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,9 +15,14 @@
 <main class="container-fluid mt-5">
 <jsp:doBody/>
 </main>
-</body>
-<footer>
 
-    <jsp:include page="/WEB-INF/footer/footer.jsp" />
+
+
+<footer style="position:fixed; left:0; right:0; bottom:10px;" class="bg-light">
+    <div class="container text-center py-2">
+        <jsp:include page="/WEB-INF/pages/footer.jsp" />
+    </div>
 </footer>
+
+</body>
 </html>
