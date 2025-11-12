@@ -5,6 +5,14 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "car")
 public class Car {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
@@ -43,13 +51,4 @@ public class Car {
     public void setLicensePlate(String licensePlate) {
         this.licensePlate = licensePlate;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
 }
