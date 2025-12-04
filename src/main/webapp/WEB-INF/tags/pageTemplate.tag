@@ -14,15 +14,21 @@
 <jsp:include page="/WEB-INF/pages/menu.jsp" />
 <main class="container-fluid mt-5">
 <jsp:doBody/>
-</main>
+
 
 
 
 <footer style="position:fixed; left:0; right:0; bottom:10px;" class="bg-light">
     <div class="container text-center py-2">
         <jsp:include page="/WEB-INF/pages/footer.jsp" />
+
     </div>
 </footer>
+</main>
 
+
+
+<script src="${pageContext.request.contextPath}/scripts/form-validation.js"></script>
+<script src="${pageContext.request.contextPath}/scripts/form-validation.js"></script>
 </body>
 </html>

@@ -15,12 +15,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/cars.jsp' ? ' active' : ''}"
-                           href="${pageContext.request.contextPath}/Cars">Cars</a>
+                           href="${pageContext.request.contextPath}/CarsServlet">Cars</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/cars.jsp' ? ' active' : ''}"
-                           href="${pageContext.request.contextPath}/Users">Users</a>
+                           href="${pageContext.request.contextPath}/UsersServlet">Users</a>
                     </li>
 
                     <li class="nav-item">

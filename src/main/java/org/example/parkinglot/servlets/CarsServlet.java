@@ -8,10 +8,11 @@ import org.example.parkinglot.common.CarDto;
 import org.example.parkinglot.ejb.CarsBean;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "Cars", value = "/Cars")
-public class Cars extends HttpServlet {
+@WebServlet(name = "CarsServlet", value = "/CarsServlet")
+public class CarsServlet extends HttpServlet {
     @Inject
     CarsBean carsBean;
 
@@ -23,8 +24,15 @@ public class Cars extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/pages/cars.jsp").forward(request,response);
     }
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws
-            ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String[] carIdsAsString = request.getParameterValues("carIds");
+        if (carIdsAsString != null ) {
+            List<Long> carIds = new ArrayList<>();
+            for (String carIdAsString : carIdsAsString) {
+                carIds.add(Long.parseLong(carIdAsString));
+            }
+            carsBean.deleteCarsByIds(carIds);
+        }
+        response.sendRedirect(request.getContextPath()+ "/CarsServlet");
     }
-
 }

@@ -1,9 +1,9 @@
 package org.example.parkinglot.common;
 
 public class UserDto {
-    Long id;
-    String username;
-    String email;
+    private Long id;
+    private String username;
+    private String email;
 
     public UserDto(Long id, String username, String email) {
         this.id = id;
@@ -12,6 +12,8 @@ public class UserDto {
     }
 
     public Long getId() { return id; }
+
     public String getUsername() { return username; }
-    public String getEmail() { return email; }
+
+    public String getEmail() { return email;}
 }
