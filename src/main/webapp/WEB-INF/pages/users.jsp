@@ -5,12 +5,16 @@
 <t:pageTemplate pageTitle="Users">
     <h1>Users</h1>
 
+    <a href="${pageContext.request.contextPath}/AddUser" class="btn btn-primary btn-lg">Add User</a>
 
+    <div class="container text-center">
         <c:forEach var="user" items="${users}">
+
             <div class="row">
                 <div class="col">${user.username}</div>
                 <div class="col">${user.email}</div>
             </div>
         </c:forEach>
     </div>
+
 </t:pageTemplate>

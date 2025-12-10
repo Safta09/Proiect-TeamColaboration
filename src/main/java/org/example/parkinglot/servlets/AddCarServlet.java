@@ -4,6 +4,8 @@ package org.example.parkinglot.servlets;
 
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.HttpConstraint;
+import jakarta.servlet.annotation.ServletSecurity;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,9 +17,11 @@ import org.example.parkinglot.ejb.UserBean;
 import java.io.IOException;
 import java.util.List;
 
+@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"WRITE_CARS"}))
 
 @WebServlet(name = "AddCarServlet", value = "/AddCarServlet")
 public class AddCarServlet extends HttpServlet {
+
     @Inject
     UserBean userBean;
     @Inject
