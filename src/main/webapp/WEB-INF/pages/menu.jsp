@@ -26,14 +26,7 @@
                            href="${pageContext.request.contextPath}/UsersServlet">Users</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/cars.jsp' ? ' active' : ''}"
-                           href="${pageContext.request.contextPath}/">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/cars.jsp' ? ' active' : ''}"
-                           href="${pageContext.request.contextPath}/disabled">Disabled</a>
-                    </li>
+
 
 
                 </ul>

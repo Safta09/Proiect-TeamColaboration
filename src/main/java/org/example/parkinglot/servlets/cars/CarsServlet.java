@@ -1,4 +1,4 @@
-package org.example.parkinglot.servlets;
+package org.example.parkinglot.servlets.cars;
 
 import jakarta.annotation.security.DeclareRoles;
 import jakarta.inject.Inject;
