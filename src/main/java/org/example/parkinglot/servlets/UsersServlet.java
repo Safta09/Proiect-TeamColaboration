@@ -11,13 +11,12 @@ import org.example.parkinglot.ejb.UserBean;
 import java.io.IOException;
 import java.util.List;
 
-@DeclareRoles({"READ_USERS", "WRITE_USERS"})
+@DeclareRoles({"WRITE_USERS"})
 @WebServlet(name = "UsersServlet", value = "/UsersServlet")
 @ServletSecurity(
-        // This applies the READ_USERS constraint to all unlisted methods (like GET).
-        value = @HttpConstraint(rolesAllowed = "READ_USERS"),
 
-        // Use @HttpMethodConstraint for specific method constraints (like POST).
+        value = @HttpConstraint(rolesAllowed = "WRITE_USERS"),
+
         httpMethodConstraints = {
                 @HttpMethodConstraint(value = "POST", rolesAllowed = "WRITE_USERS")
         }

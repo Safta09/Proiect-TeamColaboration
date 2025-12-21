@@ -50,14 +50,14 @@
                 </ul>
 
                 <li class="nav-item">
-                <c:if test="${pageContext.request.isUserInRole('READ_CARS')}">
+                <c:if test="${pageContext.request.isUserInRole('WRITE_USERS')}">
                     <a class="nav-link" ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/cars.jsp' ? 'active':''}
                        aria-current="page" href="${pageContext.request.contextPath}/CarsServlet" > Cars</a>
                     </a>
                 </c:if>
                 </li>
                 <li class="nav-item">
-                    <c:if test="${pageContext.request.isUserInRole('READ_USERS')}">
+                    <c:if test="${pageContext.request.isUserInRole('WRITE_USERS')}">
                         <a class="nav-link"
                         ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/users.jsp' ? 'active':''}
                         aria-current="page" href="${pageContext.request.contextPath}/UsersServlet" >Cars</a>
