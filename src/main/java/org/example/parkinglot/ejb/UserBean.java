@@ -22,7 +22,7 @@ public class UserBean {
     @PersistenceContext
     EntityManager entityManager;
 
-    // 💡 FIX 1: Inject the PasswordBean
+
     @Inject
     PasswordBean passwordBean;
 
@@ -69,4 +69,14 @@ public class UserBean {
             entityManager.persist(userGroup);
         }
     }
+    public Collection<String> findUsernamesByIds(Collection<Long> userIds) {
+      List<String > usernames=
+   entityManager.createQuery("SELECT u.username FROM User u WHERE u.id IN :userIds", String.class)
+           .setParameter("userIds", userIds)
+           .getResultList();
+      return usernames;
+    }
+
+
+
 }

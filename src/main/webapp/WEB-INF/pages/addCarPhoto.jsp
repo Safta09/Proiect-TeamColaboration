@@ -8,24 +8,18 @@
     <div class="container mt-3">
         <p>License plate: ${car.licensePlate}</p>
 
-        <form class="needs-validation" novalidate method="POST"  enctype="multipart/form-data"
+        <form method="POST"
+              enctype="multipart/form-data"
               action="${pageContext.request.contextPath}/AddCarPhoto">
 
-            <div class="row">
-                <div class="col-md-6 md-3">
-                    License Plate: ${car.licensePlate}
+            <div class="row mb-3">
+                <label for="photo" class="col-sm-1 col-form-label">Photo</label>
+                <div class="col-sm-4">
+                    <input type="file" name="file" id="photo" class="form-control" required>
                 </div>
             </div>
 
-                 <div class="row">
-                     <div class="col-md-6 md-3">
-                        <label for="photo">Photo</label>
-                         <input type="file" name="file" id="file" required>
-                     <div class="invalid-feedback">
-                         Phote is required.
-                     </div>
-               </div>
-            </div>
+            <hr/>
 
             <input type="hidden" name="carId" value="${car.id}" />
 

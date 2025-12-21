@@ -3,7 +3,8 @@
 <header data-bs-theme="pink">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="${pageContext.request.contextPath}">Parking Lot</a>
+
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/">Parking Lot</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -50,18 +51,13 @@
                 </ul>
 
                 <li class="nav-item">
-                <c:if test="${pageContext.request.isUserInRole('WRITE_USERS')}">
-                    <a class="nav-link" ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/cars.jsp' ? 'active':''}
-                       aria-current="page" href="${pageContext.request.contextPath}/CarsServlet" > Cars</a>
-                    </a>
-                </c:if>
+                    <c:if test="${pageContext.request.isUserInRole('WRITE_CARS')}">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/CarsServlet">Cars</a>
+                    </c:if>
                 </li>
                 <li class="nav-item">
                     <c:if test="${pageContext.request.isUserInRole('WRITE_USERS')}">
-                        <a class="nav-link"
-                        ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/users.jsp' ? 'active':''}
-                        aria-current="page" href="${pageContext.request.contextPath}/UsersServlet" >Cars</a>
-                        </a>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/UsersServlet">Users</a>
                     </c:if>
                 </li>
 
