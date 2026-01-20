@@ -40,7 +40,8 @@
                         <c:if test="${canWriteCars}">
                             <div class="col">
                                 <a class="btn btn-secondary"
-                                      href="${pageContext.request.contextPath}/AddCarPhotoServlet?id=${car.id}" role="button">Add Photo</a>
+                                   href="${pageContext.request.contextPath}/AddCarPhoto?id=${car.id}"
+                                   role="button">Add Photo</a>
                             </div>
                     <div class="col">
                             <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditCarServlet?id=${car.id}">Edit Car</a>

@@ -45,7 +45,7 @@ public class UsersServlet extends HttpServlet {
         }
 
 
-        request.getRequestDispatcher("/WEB-INF/pages/users.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/users/users.jsp").forward(request, response);
     }
 
     @Override
